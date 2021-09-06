@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
     ngOnInit() {
         this.loadAllMovies(1);
-        this.searchGetCall(this.filter)
+        // this.searchGetCall(this.filter)
     }
 
     ngOnDestroy() {
@@ -82,11 +82,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
           });
         
       }
-    // deleteUser(id: number) {
-    //     this.userService.delete(id).pipe(first()).subscribe(() => {
-    //         this.loadAllUsers()
-    //     });
-    // }
+    
     searchGetCall(term: string) {
         console.log("terms",term)
         console.log(this.asyncMeals)
@@ -107,37 +103,12 @@ export class HomeComponent implements OnInit,AfterViewInit {
         
         map(res => res.results),
     );
-        // this.userService.getAllMovies(page).subscribe(data => {
-        //     this.abc = data["results"];
-        //     console.log(data)
-        // },
-        // (error:HttpErrorResponse)=>{
-        //     console.log(error)
-        //     this.retry=true
-        // });
+        
     }
-    // getPage(page: number) {
-    //     this.loading = true;
-    //     this.asyncMeals = this.loadAllMovies(page)
-    // }
+    
     openVerticallyCentered(content,item) {
         this.modalService.open(content, { centered: true,size:'md' });
         this.modelitem=item
         console.log(this.modelitem)
       }
 }
-
-/**
- * Simulate an async HTTP call with a delayed observable.
- */
-// function serverCall(meals: string[], page: number): Observable<Movies> {
-//     const perPage = 10;
-//     const start = (page - 1) * perPage;
-//     const end = start + perPage;
-
-//     return of({
-//             items: meals.slice(start, end),
-//             total: 100
-//         }).pipe(delay(1000));
-// }
-// }

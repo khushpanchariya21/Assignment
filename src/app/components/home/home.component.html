@@ -1,25 +1,24 @@
 <section>
     <div class="container">
         <div class="col-xl-12 col-lg-12 col-md-12">
+          <div class="row justify-content-center mt-4">
             <div class="form-group">
-                <label for="movies">Search for Movies</label>
-                <input 
-                  #input
-                  id="movies" 
-                  type="text" 
-                  
-                  class="form-control" 
-                  placeholder="Search by title."/>
-                <span *ngIf="isSearching">searching...</span>
-                <!-- <div 
-                  class="invalid-feedback" 
-                  *ngIf="searchFailed">
-                  Sorry, suggestions could not be loaded.
-                </div> -->
-                <div>
-                  <button class="btn btn-primary" *ngIf="retry" (click)="loadAllMovies(1)">Retry</button>
-                </div>
+              <label for="movies">Search for Movies</label>
+              <input 
+                #input
+                id="movies" 
+                type="text" 
+                
+                class="form-control" 
+                placeholder="Search by title."/>
+              <span *ngIf="isSearching">searching...</span>
+             
+              <div>
+                <button class="btn btn-primary" *ngIf="retry" (click)="loadAllMovies(1)">Retry</button>
               </div>
+            </div>
+          </div>  
+          
             <div class="row ">
                 <div class="col-xl-4 col-lg-4 col-md-4 mb-4" *ngFor="let item of asyncMeals | async  | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total } ">
                   <div class="card" (click)=" openVerticallyCentered(content,item)" style="width: 18rem;">

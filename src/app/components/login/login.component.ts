@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private authenticationService: AuthService,
         private toastr: ToastrService
-        // private alertService: AlertService
+        
     ) {
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error=> {
-                    // this.alertService.error(error);
+                    
                     this.toastr.error('', error);
                     this.loading = false;
                 });
